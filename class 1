@@ -1,0 +1,42 @@
+# Clase base
+class Animal:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def comer(self):
+        return f"{self.nombre} está comiendo."
+
+    def dormir(self):
+        return f"{self.nombre} está durmiendo."
+
+# Subclase Mamífero
+class Mamifero(Animal):
+    def __init__(self, nombre, edad, tipo_pelo):
+        super().__init__(nombre, edad)
+        self.tipo_pelo = tipo_pelo
+
+    def amamantar(self):
+        return f"{self.nombre} está amamantando a sus crías."
+
+# Subclase Ave
+class Ave(Animal):
+    def __init__(self, nombre, edad, tipo_plumaje):
+        super().__init__(nombre, edad)
+        self.tipo_plumaje = tipo_plumaje
+
+    def volar(self):
+        return f"{self.nombre} está volando con sus {self.tipo_plumaje} plumas."
+
+# Crear instancias
+leon = Mamifero("León", 5, "corto y denso")
+aguila = Ave("Águila", 3, "largas y fuertes")
+
+# Usando métodos
+print(leon.comer())
+print(leon.amamantar())
+print(leon.dormir())
+
+print(aguila.comer())
+print(aguila.volar())
+print(aguila.dormir())
